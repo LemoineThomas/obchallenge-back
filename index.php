@@ -42,7 +42,21 @@
 				}
 			//si la session de l'utilisateur est "déconnecté", on l'envoi a l'accueil
 			}elseif ($_SESSION["connecté"] == 'déconnecté'){
-				$controller = "controller/accueil/c_accueil.php";
+				if (isset($_GET['api'])) {
+					if ($_GET['api'] == 'types') {
+						$controller = "controller/api/c_types.php";
+					}elseif($_GET['api'] == 'challenges'){
+						$controller = "controller/api/c_challenges.php";
+					}elseif($_GET['api'] == 'classements'){
+						$controller = "controller/api/c_classements.php";
+					}elseif($_GET['api'] == 'apprentissage'){
+						$controller = "controller/api/c_apprentissage.php";
+					}else{
+						$controller = "controller/accueil/c_accueil.php";
+					}
+				}else{
+					$controller = "controller/accueil/c_accueil.php";
+				}
 			}
 		}
 		

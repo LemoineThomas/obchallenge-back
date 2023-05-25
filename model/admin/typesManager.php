@@ -17,14 +17,16 @@
         return $resultat;
     }
 
-    function ajouterType($libelle, $connexion){
+    function ajouterType($libelle, $imageURL, $connexion){
         
         $libelle = strip_tags($libelle);
+        $imageURL = strip_tags($imageURL);
 
         $requete = $connexion->prepare("
-        INSERT INTO types(libelleType) VALUES (:libelle)");
+        INSERT INTO types(libelleType, imageType) VALUES (:libelle, :imageURL)");
 
         $requete->bindParam(':libelle',$libelle);
+        $requete->bindParam(':imageURL',$imageURL);
 
         $requete->execute();
     }

@@ -79,13 +79,20 @@
                                 <div class="card">
                                     <div class="card-header">Ajouter un type de challenge</div>
                                     <div class="card-body card-block">
-                                        <form action="index.php?types=ajout" method="post" class="">
+                                        <form action="index.php?types=ajout" method="post" class="" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
                                                     <input type="text" id="libelleType" name="libelleType" placeholder="Libelle" class="form-control">
+                                                </div>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-user"></i>
+                                                    </div>
+                                                    <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg">
                                                 </div>
                                             </div>
                                             <div class="form-actions form-group">
