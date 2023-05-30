@@ -1,6 +1,11 @@
 <?php
     include('model/admin/apprentissageManager.php');
-    $array = getApprentissage($connexion);
+
+    if(isset($_GET['id'])){
+        $array = getUnApprentissage(htmlspecialchars($_GET['id']), $connexion);
+    }else{
+        $array = getApprentissage($connexion);
+    }
     $view = "view/api/v_apprentissage.php";
 
 ?>

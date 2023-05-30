@@ -38,7 +38,7 @@
                                             foreach ($array as $key => $value) {
 
                                                 $challenge = getChallenges($value[4], $connexion);
-                                                $type = getUnType($challenge[0][3], $connexion);
+                                                $type = getUnType($challenge[0][4], $connexion);
 
                                                 echo '<tr>';
                                                 echo 	'<td>' .$value[0]. '</td>' ;

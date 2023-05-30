@@ -1,6 +1,7 @@
 <?php
     
     //$array = getTypes($connexion);
-    $view = "view/api/v_classement.php";
+    $array = [];
+    $view = "view/api/v_classements.php";
 
 ?>

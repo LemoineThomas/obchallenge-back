@@ -5,7 +5,7 @@
         $idType = strip_tags($idType);
 
         $requete = $connexion->prepare("
-        SELECT * FROM challenges WHERE idChallenge = :idType");
+        SELECT * FROM challenges WHERE types_idtype = :idType");
         
         $requete->bindParam(':idType',$idType);
 

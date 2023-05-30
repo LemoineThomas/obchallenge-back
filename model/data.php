@@ -29,19 +29,6 @@
 
         return $resultat;
     }
-
-	
-	// function getOrdinateurs($connexion){
-    //     $requete = $connexion->prepare("
-    //     SELECT * FROM ordinateurs");
-
-    //     $requete->execute();
-
-    //     $resultat = $requete->fetchall();
-
-
-    //     return $resultat;
-	// }
 	
 	function getTypes($connexion){
         $requete = $connexion->prepare("
