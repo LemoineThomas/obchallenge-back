@@ -63,7 +63,21 @@
 		//dans le cas où l'utilisateur vient tout juste d'arrivé, qu'aucune session n'a été lancé et 
 		//qu'il n'a donc a aucun moment souhaité se connecter, il commence par l'accueil
 		if (!isset($_GET['deconnexion']) && !isset($_SESSION["connecté"])) {
-			$controller = "controller/accueil/c_accueil.php";
+			if (isset($_GET['api'])) {
+				if ($_GET['api'] == 'types') {
+					$controller = "controller/api/c_types.php";
+				}elseif($_GET['api'] == 'challenges'){
+					$controller = "controller/api/c_challenges.php";
+				}elseif($_GET['api'] == 'classements'){
+					$controller = "controller/api/c_classements.php";
+				}elseif($_GET['api'] == 'apprentissage'){
+					$controller = "controller/api/c_apprentissage.php";
+				}else{
+					$controller = "controller/accueil/c_accueil.php";
+				}
+			}else{
+				$controller = "controller/accueil/c_accueil.php";
+			}
 		}
 		
 		//gère les erreurs 403, 404 et 500
