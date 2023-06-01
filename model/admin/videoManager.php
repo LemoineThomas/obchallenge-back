@@ -59,4 +59,23 @@
 
         return $resultat;
     }
+
+    function ajouterVideo($nom, $prenom, $instagram, $avatar, $video, $connexion){
+        $nom = strip_tags($nom);
+        $prenom = strip_tags($prenom);
+        $instagram = strip_tags($instagram);
+        $avatar = strip_tags($avatar);
+        $video = strip_tags($video);
+
+        $requete = $connexion->prepare("
+        INSERT INTO types(nom, prenom, instagram, avatar, url, status) VALUES (:nom, :prenom, :instagram, :avatar, :video, 'en attente')");
+
+        $requete->bindParam(':nom',$nom);
+        $requete->bindParam(':prenom',$prenom);
+        $requete->bindParam(':instagram',$instagram);
+        $requete->bindParam(':avatar',$avatar);
+        $requete->bindParam(':video',$video);
+
+        $requete->execute();
+    }
 ?>

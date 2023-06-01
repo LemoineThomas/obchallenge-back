@@ -2,7 +2,6 @@
     include('model/admin/videoManager.php');
 	if ($_GET['videos'] == 'ajout') {
 		
-		ajouterVideo(htmlspecialchars($_POST['nom']),$connexion);
 		//on récupére les users pour les afficher dans le tableau de l'accueil de gestion users
 		$array = getVideos($connexion);
 		

@@ -51,6 +51,8 @@
 						$controller = "controller/api/c_classements.php";
 					}elseif($_GET['api'] == 'apprentissage'){
 						$controller = "controller/api/c_apprentissage.php";
+					}elseif($_GET['api'] == 'video'){
+						$controller = "controller/api/c_video.php";
 					}else{
 						$controller = "controller/accueil/c_accueil.php";
 					}
@@ -72,6 +74,8 @@
 					$controller = "controller/api/c_classements.php";
 				}elseif($_GET['api'] == 'apprentissage'){
 					$controller = "controller/api/c_apprentissage.php";
+				}elseif($_GET['api'] == 'video'){
+					$controller = "controller/api/c_video.php";
 				}else{
 					$controller = "controller/accueil/c_accueil.php";
 				}
